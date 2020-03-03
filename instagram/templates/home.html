@@ -6,17 +6,36 @@
 <div class="home-content">
     <!-- Conteiner -->
     <div class="posts">
+        <form action="{% url 'add_post' %}" class="create-new-post" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" name="caption" placeholder="Write a caption">
+            <div>
+                <input type="file" name="image" id="file-input" accept=".jpg, .png, .jpeg">
+                <label for="file-input">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
+                        style="enable-background:new 0 0 100 100;" xml:space="preserve">
+
+                        <line class="st0" x1="49.5" y1="18.5" x2="49.5" y2="80.5" />
+                        <line class="st0" x1="80.5" y1="49.5" x2="18.5" y2="49.5" />
+                    </svg> Add Photo
+                </label>
+                <input type="submit" value="Post">
+            </div>
+        </form>
         {% if posts %}
         {% for post in posts %}
         <div class="post home-post">
             <div class="post-top">
                 <div class="user">
                     <a href="#"><img src="{% static 'images/profile.jpg' %}" alt=""></a>
-                    <a class="name" href="#">{{post.author}}</a>
+                    <a class="name" href="#">rohid</a>
                 </div>
             </div>
             <div class="img">
+                {% if post.image %}
                 <img src="{{ post.image.url }}" alt="">
+                {% endif %}
             </div>
             <div class="post-btns">
                 <a href="#">
@@ -59,8 +78,8 @@ c8.2-8.2,21.5-8.2,29.7,0l0,0c8.2,8.2,8.2,21.5,0,29.7L50,84.47L50,84.47z" />
             <div class="discription-sect">
                 <p><span>0</span> Likes</p>
                 <p class="discription">
-                    <a href="#">{{post.author}} </a>
-                    {{ post.discription|slice:"100" }}{% if post.discription|length > 100 %}...{% endif %}
+                    <a href="#">rohid </a>
+                    {{ post.caption|slice:"100" }}{% if post.caption|length > 100 %}...{% endif %}
 
                 </p>
                 <p>
