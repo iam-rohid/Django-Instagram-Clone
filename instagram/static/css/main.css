@@ -151,13 +151,17 @@ header nav .nav-links a svg {
 
 header nav .nav-links a svg .st0 {
   fill: none;
-  stroke: #000000;
+  stroke: #333;
   stroke-width: 5;
   stroke-miterlimit: 10;
 }
 
 header nav .nav-links a img {
   border-radius: 50%;
+}
+
+header nav .nav-links .active svg .st0 {
+  fill: #333;
 }
 
 main {
@@ -174,16 +178,22 @@ main {
 }
 
 .home-content .sidebar {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
-  grid-area: sidebar;
-  width: 100%;
-  height: 300px;
-  margin-top: 30px;
+  position: fixed;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 0px;
+  float: right;
+  margin-top: 84px;
   border-radius: 5px;
 }
 
-.home-content .sidebar .user {
+.home-content .sidebar .sidebar-content {
+  float: right;
+  width: 300px;
+}
+
+.home-content .sidebar .sidebar-content .user {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -197,7 +207,7 @@ main {
           flex-direction: row;
 }
 
-.home-content .sidebar .user a img {
+.home-content .sidebar .sidebar-content .user a img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -206,23 +216,24 @@ main {
      object-fit: cover;
 }
 
-.home-content .sidebar .user div {
+.home-content .sidebar .sidebar-content .user div {
   margin-top: -15px;
   padding-left: 20px;
 }
 
-.home-content .sidebar .user div a {
+.home-content .sidebar .sidebar-content .user div a {
   font-size: 0.9rem;
   color: #333;
   font-weight: 600;
 }
 
-.home-content .sidebar .user div p {
+.home-content .sidebar .sidebar-content .user div p {
   font-size: 0.9rem;
   opacity: 0.5;
 }
 
 .home-content .posts {
+  z-index: 100;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: posts;
@@ -249,12 +260,6 @@ main {
           align-items: center;
 }
 
-.home-content .posts .home-post .post-top .user a {
-  color: #333;
-  font-weight: 600;
-  margin-right: 10px;
-}
-
 .home-content .posts .home-post .post-top .user a img {
   width: 40px;
   height: 40px;
@@ -262,6 +267,13 @@ main {
   overflow: hidden;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.home-content .posts .home-post .post-top .user .name {
+  margin-top: -10px;
+  color: #333;
+  font-weight: 600;
+  margin-left: 20px;
 }
 
 .home-content .posts .home-post .img {

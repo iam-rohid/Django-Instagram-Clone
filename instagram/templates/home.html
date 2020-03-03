@@ -12,7 +12,7 @@
             <div class="post-top">
                 <div class="user">
                     <a href="#"><img src="{% static post.profile_pic %}" alt=""></a>
-                    <a href="#">{{post.author}}</a>
+                    <a class="name" href="#">{{post.author}}</a>
                 </div>
             </div>
             <div class="img">
@@ -31,12 +31,14 @@
         {% endif %}
     </div>
     <!-- Sidebar -->
-    <div class="sidebar">
-        <div class="user">
-            <a href="#"><img src="{% static 'images/profile.jpg' %}" alt=""></a>
-            <div>
-                <a href="#">rohidul_islam</a>
-                <p><small>Rohidul Islam</small></p>
+    <div class="sidebar container">
+        <div class="sidebar-content">
+            <div class="user">
+                <a href="#"><img src="{% static 'images/profile.jpg' %}" alt=""></a>
+                <div>
+                    <a href="#">rohidul_islam</a>
+                    <p><small>Rohidul Islam</small></p>
+                </div>
             </div>
         </div>
     </div>
