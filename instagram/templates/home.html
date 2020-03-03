@@ -11,16 +11,68 @@
         <div class="post home-post">
             <div class="post-top">
                 <div class="user">
-                    <a href="#"><img src="{% static post.profile_pic %}" alt=""></a>
+                    <a href="#"><img src="{% static 'images/profile.jpg' %}" alt=""></a>
                     <a class="name" href="#">{{post.author}}</a>
                 </div>
             </div>
             <div class="img">
-                <img src="{% static post.image %}" alt="">
+                <img src="{{ post.image.url }}" alt="">
+            </div>
+            <div class="post-btns">
+                <a href="#">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
+                        style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                        <path class="st0" d="M50,84.47l-33.1-33.1c-8.2-8.2-8.2-21.5,0-29.7l0,0c8.2-8.2,21.5-8.2,29.7,0l3.4,3.4l0,0l3.4-3.4
+c8.2-8.2,21.5-8.2,29.7,0l0,0c8.2,8.2,8.2,21.5,0,29.7L50,84.47L50,84.47z" />
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
+                        style="enable-background:new 0 0 100 100;" xml:space="preserve">
+
+                        <path class="st0" d="M81.5,81.5l-7.74-14.37c3.6-4.95,5.74-11.04,5.74-17.63c0-16.57-13.43-30-30-30s-30,13.43-30,30s13.43,30,30,30
+	c5.56,0,10.76-1.52,15.22-4.15L81.5,81.5z" />
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
+                        style="enable-background:new 0 0 100 100;" xml:space="preserve">
+
+                        <polygon class="st0" points="7.5,31.5 92.5,9.5 51.5,90.5 39.5,55.5 " />
+                        <line class="st0" x1="92.5" y1="9.5" x2="39.5" y2="55.5" />
+                    </svg>
+
+                </a>
+                <a href="#">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
+                        style="enable-background:new 0 0 100 100;" xml:space="preserve">
+
+                        <polygon class="st0" points="84.5,90.5 50.5,59.5 14.5,90.5 14.5,8.5 84.5,8.5 " />
+                    </svg>
+
+                </a>
             </div>
             <div class="discription-sect">
-                <p><span>{{ post.views }}</span> views</p>
-                <p class="discription"><a href="#">{{post.author}}</a> {{ post.discription }}</p>
+                <p><span>0</span> Likes</p>
+                <p class="discription">
+                    <a href="#">{{post.author}} </a>
+                    {{ post.discription|slice:"100" }}{% if post.discription|length > 100 %}...{% endif %}
+
+                </p>
+                <p>
+                    <small>
+                        {% now "Y-m-d" as todays_date %}
+                        {% if todays_date == post.uploaded_date|date:"Y-m-d" %}
+                        Today {{post.uploaded_date|date:"g:i A"}}
+                        {% else %}
+                        {{post.uploaded_date|date:"j F"}}
+                        {% endif %}
+                    </small>
+                </p>
             </div>
             <form class="add-comment" method="POST">
                 <input type="text" name="add-comment" id="comment-input" placeholder="Add a comment">
@@ -36,7 +88,7 @@
             <div class="user">
                 <a href="#"><img src="{% static 'images/profile.jpg' %}" alt=""></a>
                 <div>
-                    <a href="#">rohidul_islam</a>
+                    <a href="#">rohid</a>
                     <p><small>Rohidul Islam</small></p>
                 </div>
             </div>

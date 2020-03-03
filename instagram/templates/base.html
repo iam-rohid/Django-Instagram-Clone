@@ -15,7 +15,7 @@
     <div style="height: 54px;"></div>
     <header>
         <nav class="container main-nav">
-            <a class="nav-logo" href="#"><img src="{% static '/images/logo.png' %}" alt=""></a>
+            <a class="nav-logo" href="{% url 'home' %}"><img src="{% static '/images/logo.png' %}" alt=""></a>
             <form method="POST">
                 <input type="text" name="search" id="search-input" placeholder="Search">
                 <label for="search-input">
@@ -48,7 +48,7 @@
                 </label>
             </form>
             <div class="nav-links">
-                <a href="#" id="nav-home" class="active">
+                <a href="{% url 'home' %}" id="nav-home" class="active">
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
                         style="enable-background:new 0 0 100 100;" xml:space="preserve">

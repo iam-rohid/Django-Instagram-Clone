@@ -20,6 +20,7 @@ html {
 
 body {
     background-color: #fff;
+    color: #333;
 }
 
 .container {
@@ -205,7 +206,7 @@ main {
             border-radius: 5px;
 
             .post-top {
-                padding: 10px;
+                padding: 10px 20px;
 
                 .user {
                     display: flex;
@@ -241,8 +242,41 @@ main {
                 }
             }
 
+            .post-btns {
+                padding: 0 20px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                a {
+                    margin-right: 10px;
+
+                    svg {
+                        height: 35px;
+
+                        .st0 {
+                            fill: none;
+                            stroke: #333;
+                            stroke-width: 5;
+                            stroke-miterlimit: 10;
+                        }
+                    }
+                }
+
+                a:nth-child(2) {
+                    svg {
+                        height: 42px;
+                    }
+                }
+
+                a:last-child {
+                    margin-left: auto;
+                    margin-right: 0;
+                }
+            }
+
             .discription-sect {
-                padding: 10px 20px;
+                padding: 0 20px 10px 20px;
 
                 p {
                     font-size: 0.9rem;
@@ -253,6 +287,10 @@ main {
                     span {
                         color: #333;
                         font-weight: 600;
+                    }
+
+                    small {
+                        font-size: 0.7rem;
                     }
                 }
             }
