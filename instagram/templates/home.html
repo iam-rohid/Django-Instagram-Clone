@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="home-content">
+    <!-- Conteiner -->
+    <div class="posts">
+        {% if posts %}
+        {% for post in posts %}
+        <div class="post home-post">
+            <div class="post-top">
+                <div class="user">
+                    <a href="#"><img src="{% static post.profile_pic %}" alt=""></a>
+                    <a href="#">{{post.author}}</a>
+                </div>
+            </div>
+            <div class="img">
+                <img src="{% static post.image %}" alt="">
+            </div>
+            <div class="discription-sect">
+                <p><span>{{ post.views }}</span> views</p>
+                <p class="discription"><a href="#">{{post.author}}</a> {{ post.discription }}</p>
+            </div>
+            <form class="add-comment" method="POST">
+                <input type="text" name="add-comment" id="comment-input" placeholder="Add a comment">
+                <input type="submit" value="Post">
+            </form>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="user">
+            <a href="#"><img src="{% static 'images/profile.jpg' %}" alt=""></a>
+            <div>
+                <a href="#">rohidul_islam</a>
+                <p><small>Rohidul Islam</small></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

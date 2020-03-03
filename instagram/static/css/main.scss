@@ -1,0 +1,274 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fff;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    z-index: 1111;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 54px;
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.2);
+    background-color: #fff;
+
+    nav {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        height: 100%;
+
+        .nav-logo {
+            margin-right: auto;
+
+            img {
+                height: 40px;
+            }
+        }
+
+        form {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border: 1px solid rgba($color: #000000, $alpha: 0.2);
+            width: 220px;
+            height: 30px;
+            margin: 0 auto;
+            padding: 0 10px;
+            border-radius: 5px;
+
+
+
+            input[type=text] {
+                order: 2;
+                background: none;
+                border: none;
+                outline: none;
+                width: 100%;
+
+                &::placeholder {
+                    opacity: 0.6;
+                }
+            }
+
+            label {
+                order: 1;
+                display: flex;
+                align-items: center;
+
+                svg {
+                    height: 1.5rem;
+                    opacity: 0.3;
+                }
+            }
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            a {
+                margin-left: 20px;
+
+                svg,
+                img {
+                    height: 30px;
+                    width: 30px;
+                    object-fit: cover;
+                }
+
+                svg {
+                    padding: 2px;
+
+                    .st0 {
+                        fill: none;
+                        stroke: #000000;
+                        stroke-width: 5;
+                        stroke-miterlimit: 10;
+                    }
+                }
+
+                img {
+                    border-radius: 50%;
+                }
+
+            }
+        }
+    }
+}
+
+main {
+    margin-top: 54px;
+}
+
+.home-content {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    grid-template-areas: "posts sidebar";
+    grid-gap: 30px;
+
+    .sidebar {
+        grid-area: sidebar;
+        width: 100%;
+        height: 300px;
+        margin-top: 30px;
+        border-radius: 5px;
+
+        .user {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+
+            a {
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    object-fit: cover;
+                }
+            }
+
+            div {
+                margin-top: -15px;
+                padding-left: 20px;
+
+                a {
+                    font-size: 0.9rem;
+                    color: #333;
+                    font-weight: 600;
+                }
+
+                p {
+                    font-size: 0.9rem;
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+
+    .posts {
+        grid-area: posts;
+        width: 100%;
+
+        .home-post {
+            // width: 100%;
+            overflow: hidden;
+            border: 1px solid rgba($color: #000000, $alpha: 0.2);
+            margin: 30px 0;
+            border-radius: 5px;
+
+            .post-top {
+                padding: 10px;
+
+                .user {
+                    display: flex;
+                    align-items: center;
+
+                    a {
+                        color: #333;
+                        font-weight: 600;
+                        margin-right: 10px;
+
+                        img {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            overflow: hidden;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+
+            .img {
+                width: 100%;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+
+                }
+            }
+
+            .discription-sect {
+                padding: 10px 20px;
+
+                p {
+                    font-size: 0.9rem;
+                    color: #333;
+                    font-weight: 400;
+
+                    a,
+                    span {
+                        color: #333;
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            form {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 100%;
+                height: 50px;
+                border-top: 1px solid rgba($color: #000000, $alpha: 0.1);
+                padding: 20px;
+
+                input[type=text] {
+                    width: 100%;
+                    background: none;
+                    border: none;
+                    outline: none;
+                    font-size: 0.9rem;
+                    color: #333;
+
+                    &::placeholder {
+                        opacity: 0.5;
+                    }
+                }
+
+                input[type=submit] {
+                    cursor: pointer;
+                    background: none;
+                    border: none;
+                    outline: none;
+                    color: #559eff;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

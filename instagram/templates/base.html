@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div style="height: 54px;"></div>
+    <header>
+        <nav class="container main-nav">
+            <a class="nav-logo" href="#"><img src="{% static '/images/logo.png' %}" alt=""></a>
+            <form method="POST">
+                <input type="text" name="search" id="search-input" placeholder="Search">
+                <label for="search-input">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
+                        style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                        <style type="text/css">
+                            .st0 {
+                                fill: none;
+                                stroke: #000000;
+                                stroke-width: 8;
+                                stroke-miterlimit: 10;
+                            }
+
+                            .st1 {
+                                fill: none;
+                                stroke: #000000;
+                                stroke-width: 8;
+                                stroke-linecap: round;
+                                stroke-miterlimit: 10;
+                            }
+                        </style>
+                        <g>
+                            <circle class="st0" cx="45.36" cy="45.71" r="19" />
+                            <g>
+                                <line class="st1" x1="60.21" y1="59.85" x2="73.64" y2="73.29" />
+                            </g>
+                        </g>
+                    </svg>
+                </label>
+            </form>
+            <div class="nav-links">
+                <a href="#" id="nav-home">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
+                        style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                        <path class="st0" d="M38.5,85V62.5C38.5,56.15,43.65,51,50,51h0c6.35,0,11.5,5.15,11.5,11.5V85L85,85V39c0,0-35-25-35-25L15,39v46
+	L38.5,85z" />
+                    </svg>
+                </a>
+                <a href="#" id="nav-notification">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
+                        style="enable-background:new 0 0 100 100;" xml:space="preserve">
+                        <path class="st0" d="M50,84.47l-33.1-33.1c-8.2-8.2-8.2-21.5,0-29.7l0,0c8.2-8.2,21.5-8.2,29.7,0l3.4,3.4l0,0l3.4-3.4
+	c8.2-8.2,21.5-8.2,29.7,0l0,0c8.2,8.2,8.2,21.5,0,29.7L50,84.47L50,84.47z" />
+                    </svg>
+                </a>
+                <a href="#" id="nav-profile">
+                    <img src="{% static 'images/profile.jpg' %}" alt="">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+
+        </div>
+
+        <!-- Conteiner -->
+        <div class="posts">
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </main>
+</body>
+
+</html>
