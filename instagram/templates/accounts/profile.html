@@ -3,8 +3,31 @@
 
 
 {% block content %}
-<h1>Profile</h1>
-<h1>{{user.username}}</h1>
-<h1>{{user.email}}</h1>
-<a href="{% url 'logout' %}">Log out!</a>
+<div class="profile">
+    <div class="user-info">
+        <div class="profile_pic">
+            <img src="{{user.profile.profile_pic.url}}" alt="">
+        </div>
+        <div class="info">
+            <h3 class="user-name">{{ user.username }}</h3>
+            <div class="count">
+                <p class="posts"><span>{{ posts|length }}</span> posts</p>
+                <p class="follower"><span>0</span> follower</p>
+                <p class="following"><span>0</span> following</p>
+            </div>
+            <h4 class="full-name">Rohidul Islam</h4>
+            <p class="user-bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus aliquid odit
+                officiis doloremque velit nostrum, ullam esse atque quibusdam veniam!</p>
+        </div>
+    </div>
+    <div class="user-posts">
+        {% if posts %}
+        {% for post in posts %}
+        <div class="img-container">
+            <img src="{{ post.image.url}}" alt="">
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
 {% endblock content %}

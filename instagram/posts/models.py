@@ -10,4 +10,4 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.author.username
+        return f'{self.id}_{self.date_posted}_by_{self.author.id}'
