@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {% if form %}
+    {{form}}
+    {% endif %}
+    <input type="submit" value="Log in">
+</form>
+{% endblock content %}

@@ -1,13 +1,13 @@
-from django.contrib.auth.models import User
-from django.utils import timezone
 from django.db import models
+from django.utils import timezone
+from django.contrib.auth.models import User
 
 
 class Post(models.Model):
-    # author = models.ForeignKey(User, on_delete=models.CASCADE)
     image = models.FileField(upload_to='post_images/', blank=False)
     caption = models.TextField(blank=True)
-    uploaded_date = models.DateTimeField(default=timezone.now)
+    date_posted = models.DateTimeField(default=timezone.now)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    # def __str__(self):
-    # title = self.author.username + " " + self.uploaded_date.strftime('%c')
+    def __str__(self):
+        return self.author.username

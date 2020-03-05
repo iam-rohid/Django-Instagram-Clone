@@ -28,8 +28,8 @@
         <div class="post home-post">
             <div class="post-top">
                 <div class="user">
-                    <a href="#"><img src="{% static 'images/profile.jpg' %}" alt=""></a>
-                    <a class="name" href="#">rohid</a>
+                    <a href="#"><img src="{{ post.author.profile.profile_pic.url }}" alt=""></a>
+                    <a class="name" href="#">{{ post.author.username }}</a>
                 </div>
             </div>
             <div class="img">
@@ -78,17 +78,17 @@ c8.2-8.2,21.5-8.2,29.7,0l0,0c8.2,8.2,8.2,21.5,0,29.7L50,84.47L50,84.47z" />
             <div class="discription-sect">
                 <p><span>0</span> Likes</p>
                 <p class="discription">
-                    <a href="#">rohid </a>
+                    <a href="#">{{post.author.username}} </a>
                     {{ post.caption|slice:"100" }}{% if post.caption|length > 100 %}...{% endif %}
 
                 </p>
                 <p>
                     <small>
                         {% now "Y-m-d" as todays_date %}
-                        {% if todays_date == post.uploaded_date|date:"Y-m-d" %}
-                        Today {{post.uploaded_date|date:"g:i A"}}
+                        {% if todays_date == post.date_posted|date:"Y-m-d" %}
+                        Today {{post.date_posted|date:"g:i A"}}
                         {% else %}
-                        {{post.uploaded_date|date:"j F"}}
+                        {{post.date_posted|date:"j F"}}
                         {% endif %}
                     </small>
                 </p>
@@ -105,9 +105,11 @@ c8.2-8.2,21.5-8.2,29.7,0l0,0c8.2,8.2,8.2,21.5,0,29.7L50,84.47L50,84.47z" />
     <div class="sidebar container">
         <div class="sidebar-content">
             <div class="user">
-                <a href="#"><img src="{% static 'images/profile.jpg' %}" alt=""></a>
+                <a href="{% url 'profile' %}">
+                    <img src="{{ user.profile.profile_pic.url }}" alt="">
+                </a>
                 <div>
-                    <a href="#">rohid</a>
+                    <a href="{% url 'profile' %}">{{user.username}}</a>
                     <p><small>Rohidul Islam</small></p>
                 </div>
             </div>

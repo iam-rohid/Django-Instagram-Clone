@@ -64,8 +64,10 @@
 	c8.2-8.2,21.5-8.2,29.7,0l0,0c8.2,8.2,8.2,21.5,0,29.7L50,84.47L50,84.47z" />
                     </svg>
                 </a>
-                <a href="#" id="nav-profile">
-                    <img src="{% static 'images/profile.jpg' %}" alt="">
+                <a href="{% url 'profile' %}" id="nav-profile">
+                    {% if user.is_authenticated %}
+                    <img src="{{ user.profile.profile_pic.url }}" alt="">
+                    {% endif %}
                 </a>
             </div>
         </nav>
