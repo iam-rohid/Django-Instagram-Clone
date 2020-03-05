@@ -17,11 +17,11 @@ def register(request):
     return render(request, 'accounts/register.html', {'form': form})
 
 
-@login_required
-def profile(request):
-    posts = Post.objects.filter(
-        author=request.user.id).order_by('-date_posted')
-    context = {
-        'posts': posts,
-    }
-    return render(request, 'accounts/profile.html', context)
+# @login_required
+# def profile(request):
+#     posts = Post.objects.filter(
+#         author=request.user.id).order_by('-date_posted')
+#     context = {
+#         'posts': posts,
+#     }
+#     return render(request, 'accounts/profile.html', context)

@@ -6,18 +6,21 @@
 <div class="profile">
     <div class="user-info">
         <div class="profile_pic">
-            <img src="{{user.profile.profile_pic.url}}" alt="">
+            <img src="{{thisuser.profile.profile_pic.url}}" alt="">
         </div>
         <div class="info">
-            <h3 class="user-name">{{ user.username }}</h3>
+            <h3 class="user-name">{{ thisuser.username }}
+                {% if thisuser == user %}
+                <a style="font-weight: 600;  color: rgb(70, 150, 255);" href="{% url 'logout' %}">Edit</a>
+                <a style="font-weight: 600;  color: rgb(255, 70, 70);" href="{% url 'logout' %}">Logout</a></h3>
+            {% endif %}
             <div class="count">
                 <p class="posts"><span>{{ posts|length }}</span> posts</p>
                 <p class="follower"><span>0</span> follower</p>
                 <p class="following"><span>0</span> following</p>
             </div>
-            <h4 class="full-name">Rohidul Islam</h4>
-            <p class="user-bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus aliquid odit
-                officiis doloremque velit nostrum, ullam esse atque quibusdam veniam!</p>
+            <h4 class="full-name">{{ thisuser.profile.fullname }}</h4>
+            <p class="user-bio">{{ thisuser.profile.bio }}</p>
         </div>
     </div>
     <div class="user-posts">

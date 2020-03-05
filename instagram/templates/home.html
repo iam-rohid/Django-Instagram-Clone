@@ -29,8 +29,9 @@
         <div class="post home-post">
             <div class="post-top">
                 <div class="user">
-                    <a href="#"><img src="{{ post.author.profile.profile_pic.url }}" alt=""></a>
-                    <a class="name" href="#">{{ post.author.username }}</a>
+                    <a href="/{{ post.author.username }}/"><img src="{{ post.author.profile.profile_pic.url }}"
+                            alt=""></a>
+                    <a class="name" href="/{{ post.author.username }}/">{{ post.author.username }}</a>
                 </div>
             </div>
             <div class="img">
@@ -79,7 +80,7 @@ c8.2-8.2,21.5-8.2,29.7,0l0,0c8.2,8.2,8.2,21.5,0,29.7L50,84.47L50,84.47z" />
             <div class="discription-sect">
                 <p><span>0</span> Likes</p>
                 <p class="discription">
-                    <a href="#">{{post.author.username}} </a>
+                    <a href="/{{ post.author.username }}/">{{post.author.username}} </a>
                     {{ post.caption|slice:"100" }}{% if post.caption|length > 100 %}...{% endif %}
 
                 </p>
@@ -106,12 +107,12 @@ c8.2-8.2,21.5-8.2,29.7,0l0,0c8.2,8.2,8.2,21.5,0,29.7L50,84.47L50,84.47z" />
     <div class="sidebar container">
         <div class="sidebar-content">
             <div class="user">
-                <a href="{% url 'profile' %}">
+                <a href="/{{ user.username }}/">
                     <img src="{{ user.profile.profile_pic.url }}" alt="">
                 </a>
                 <div>
-                    <a href="{% url 'profile' %}">{{user.username}}</a>
-                    <p><small>Rohidul Islam</small></p>
+                    <a href="/{{ user.username }}/">{{user.username}}</a>
+                    <p><small>{{ user.profile.fullname }}</small></p>
                 </div>
             </div>
         </div>

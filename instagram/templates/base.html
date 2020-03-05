@@ -7,7 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}" />
     <link rel="stylesheet" href="{% static '/css/main.css' %}">
-    <title>{{ title }}</title>
+    <title>
+        {% if title %}
+        Instagram - {{ title }}
+        {% else %}
+        Instagram
+        {% endif %}
+    </title>
 </head>
 
 <body>
@@ -64,7 +70,7 @@
 	c8.2-8.2,21.5-8.2,29.7,0l0,0c8.2,8.2,8.2,21.5,0,29.7L50,84.47L50,84.47z" />
                     </svg>
                 </a>
-                <a href="{% url 'profile' %}" id="nav-profile">
+                <a href="/{{ user.username }}/" id="nav-profile">
                     {% if user.is_authenticated %}
                     <img src="{{ user.profile.profile_pic.url }}" alt="">
                     {% endif %}
