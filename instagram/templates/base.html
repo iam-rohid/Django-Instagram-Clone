@@ -54,7 +54,8 @@
                 </label>
             </form>
             <div class="nav-links">
-                <a href="{% url 'home' %}" id="nav-home" class="active">
+                {% if user.is_authenticated %}
+                <a href="{% url 'home' %}" id="nav-home" {% if request.path == "/" %} class="active" {% endif %}>
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
                         style="enable-background:new 0 0 100 100;" xml:space="preserve">
@@ -71,20 +72,19 @@
                     </svg>
                 </a>
                 <a href="/{{ user.username }}/" id="nav-profile">
-                    {% if user.is_authenticated %}
                     <img src="{{ user.profile.profile_pic.url }}" alt="">
-                    {% endif %}
                 </a>
+                {% else %}
+                <a href="{% url 'login' %}">Log in</a>
+                <a href="{% url 'register' %}">Sign up</a>
+                {% endif %}
             </div>
         </nav>
     </header>
 
     <main class="container">
-        <!-- Conteiner -->
-        <div class="posts">
-            {% block content %}
-            {% endblock content %}
-        </div>
+        {% block content %}
+        {% endblock content %}
     </main>
 </body>
 

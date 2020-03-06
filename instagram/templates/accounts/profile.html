@@ -11,7 +11,7 @@
         <div class="info">
             <h3 class="user-name">{{ thisuser.username }}
                 {% if thisuser == user %}
-                <a style="font-weight: 600;  color: rgb(70, 150, 255);" href="{% url 'logout' %}">Edit</a>
+                <a style="font-weight: 600;  color: rgb(70, 150, 255);" href="#">Edit</a>
                 <a style="font-weight: 600;  color: rgb(255, 70, 70);" href="{% url 'logout' %}">Logout</a></h3>
             {% endif %}
             <div class="count">
