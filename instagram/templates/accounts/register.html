@@ -11,7 +11,11 @@
 </head>
 
 <body>
-
+    {% if messeges%}
+    {% for messege in messeges%}
+    {{messege}}
+    {% endfor %}
+    {% endif %}
     {% if form %}
     <form action="{% url 'register' %}" class="register-form form" method="POST">
         {% csrf_token %}
