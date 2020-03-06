@@ -1,43 +1,30 @@
+{% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <title>Register</title>
-</head>
-
-<body>
-    {% if messeges%}
-    {% for messege in messeges%}
-    {{messege}}
-    {% endfor %}
-    {% endif %}
-    {% if form %}
-    <form action="{% url 'login' %}" class="register-form form" method="POST">
-        <div class="form-logo">
-            <img src="{% static 'images/logo.png' %}" alt="">
-        </div>
-        {% csrf_token %}
-        <div class="text-input">
-            <input type="text" class="text-input-box" placeholder="Name" name="username" id="username">
-            <label for="username">Username</label>
-        </div>
-        <div class="text-input">
-            <input type="password" class="text-input-box" placeholder="Name" name="password" id="password">
-            <label for="password">Password</label>
-        </div>
-        <div>
-            <input type="submit" value="Log in">
-        </div>
-    </form>
-    <div class="form">
-        <p>Don't have an account? <a href="{% url 'register' %}">Create one</a></p>
+{% block content %}
+<form action="{% url 'login' %}" class="register-form form" method="POST">
+    {% csrf_token %}
+    <!-- Site Logo -->
+    <div class="form-logo">
+        <img src="{% static 'images/logo.png' %}" alt="">
     </div>
-    {% endif %}
-</body>
-
-</html>
+    <!-- User username -->
+    <div class="error">{{error}}</div>
+    <div class="text-input">
+        <input type="text" class="text-input-box" placeholder="Name" name="username" id="username">
+        <label for="username">Username</label>
+    </div>
+    <!-- User Password -->
+    <div class="text-input">
+        <input type="password" class="text-input-box" placeholder="Name" name="password" id="password">
+        <label for="password">Password</label>
+    </div>
+    <div>
+        <input type="submit" value="Log in">
+    </div>
+</form>
+<!-- Alternative links -->
+<div class="form">
+    <p>Don't have an account? <a href="{% url 'register' %}">Create one</a></p>
+</div>
+{% endblock content %}

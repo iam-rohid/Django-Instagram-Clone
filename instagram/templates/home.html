@@ -20,10 +20,11 @@
                         <line class="st0" x1="80.5" y1="49.5" x2="18.5" y2="49.5" />
                     </svg> Add Photo
                 </label>
-                <input style="display: none;" type="text" value="{{ user.id }}" name="author">
+                <input type="hidden" value="{{ user.id }}" name="author">
                 <input type="submit" value="Post">
             </div>
         </form>
+        <!-- Posts -->
         {% if posts %}
         {% for post in posts %}
         <div class="post home-post">
@@ -40,6 +41,7 @@
                 {% endif %}
             </div>
             <div class="post-btns">
+                <!-- Like Button -->
                 <a href="#">
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
@@ -48,6 +50,7 @@
 c8.2-8.2,21.5-8.2,29.7,0l0,0c8.2,8.2,8.2,21.5,0,29.7L50,84.47L50,84.47z" />
                     </svg>
                 </a>
+                <!-- Comment Button -->
                 <a href="#">
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
@@ -57,6 +60,7 @@ c8.2-8.2,21.5-8.2,29.7,0l0,0c8.2,8.2,8.2,21.5,0,29.7L50,84.47L50,84.47z" />
 	c5.56,0,10.76-1.52,15.22-4.15L81.5,81.5z" />
                     </svg>
                 </a>
+                <!-- Share Button -->
                 <a href="#">
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
@@ -65,8 +69,8 @@ c8.2-8.2,21.5-8.2,29.7,0l0,0c8.2,8.2,8.2,21.5,0,29.7L50,84.47L50,84.47z" />
                         <polygon class="st0" points="7.5,31.5 92.5,9.5 51.5,90.5 39.5,55.5 " />
                         <line class="st0" x1="92.5" y1="9.5" x2="39.5" y2="55.5" />
                     </svg>
-
                 </a>
+                <!-- Save Button -->
                 <a href="#">
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
@@ -74,7 +78,6 @@ c8.2-8.2,21.5-8.2,29.7,0l0,0c8.2,8.2,8.2,21.5,0,29.7L50,84.47L50,84.47z" />
 
                         <polygon class="st0" points="84.5,90.5 50.5,59.5 14.5,90.5 14.5,8.5 84.5,8.5 " />
                     </svg>
-
                 </a>
             </div>
             <div class="discription-sect">
@@ -82,18 +85,16 @@ c8.2-8.2,21.5-8.2,29.7,0l0,0c8.2,8.2,8.2,21.5,0,29.7L50,84.47L50,84.47z" />
                 <p class="discription">
                     <a href="/{{ post.author.username }}/">{{post.author.username}} </a>
                     {{ post.caption|slice:"100" }}{% if post.caption|length > 100 %}...{% endif %}
-
                 </p>
-                <p>
-                    <small>
-                        {% now "Y-m-d" as todays_date %}
-                        {% if todays_date == post.date_posted|date:"Y-m-d" %}
-                        Today {{post.date_posted|date:"g:i A"}}
-                        {% else %}
-                        {{post.date_posted|date:"j F"}}
-                        {% endif %}
-                    </small>
-                </p>
+                <p><small>
+                    <!-- Time Calculations -->
+                    {% now "Y-m-d" as todays_date %}
+                    {% if todays_date == post.date_posted|date:"Y-m-d" %}
+                    Today {{post.date_posted|date:"g:i A"}}
+                    {% else %}
+                    {{post.date_posted|date:"j F"}}
+                    {% endif %}
+                </small></p>
             </div>
             <form class="add-comment" method="POST">
                 <input type="text" name="add-comment" id="comment-input" placeholder="Add a comment">

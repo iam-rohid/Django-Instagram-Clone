@@ -1,19 +1,20 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block content %}
 <div class="profile">
     <div class="user-info">
+        <!-- User profile pic -->
         <div class="profile_pic">
-            <img src="{{thisuser.profile.profile_pic.url}}" alt="">
+            <img src="{{ thisuser.profile.profile_pic.url }}" alt="Image is not found!">
         </div>
         <div class="info">
             <h3 class="user-name">{{ thisuser.username }}
+                <!-- Checking thisuser is the currently loged in user or not -->
                 {% if thisuser == user %}
-                <a style="font-weight: 600;  color: rgb(70, 150, 255);" href="#">Edit</a>
-                <a style="font-weight: 600;  color: rgb(255, 70, 70);" href="{% url 'logout' %}">Logout</a></h3>
-            {% endif %}
+                    <a style="font-weight: 600;  color: rgb(70, 150, 255);" href="#">Edit</a>
+                    <a style="font-weight: 600;  color: rgb(255, 70, 70);" href="{% url 'logout' %}">Logout</a></h3>
+                {% endif %}
             <div class="count">
                 <p class="posts"><span>{{ posts|length }}</span> posts</p>
                 <p class="follower"><span>0</span> follower</p>
@@ -23,11 +24,12 @@
             <p class="user-bio">{{ thisuser.profile.bio }}</p>
         </div>
     </div>
+    <!-- Image galary -->
     <div class="user-posts">
         {% if posts %}
         {% for post in posts %}
         <div class="img-container">
-            <img src="{{ post.image.url}}" alt="">
+            <img src="{{ post.image.url }}" alt="Image is not found!">
         </div>
         {% endfor %}
         {% endif %}
