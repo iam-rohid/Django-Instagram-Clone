@@ -5,12 +5,12 @@
   <p align="center">
     Instagram clone project with django
     <br />
-    <br>
+    <br />
+    <a href="https://github.com/rohid-hub/Instagram_Clone/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/rohid-hub/Instagram_Clone/issues">Request Feature</a>
   </p>
-  [View Now](https://instagramcloneri.herokuapp.com/)·  [Report Bug](https://github.com/rohid-hub/Instagram_Clone/issues) ·[ Request Feature](https://github.com/rohid-hub/Instagram_Clone/issues)
-</p>    
-    
-
+</p>
 
 
 <!-- TABLE OF CONTENTS -->
