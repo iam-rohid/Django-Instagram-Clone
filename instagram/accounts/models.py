@@ -7,7 +7,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(max_length=500, blank=True)
     profile_pic = models.ImageField(
-        default='profile_pics/default.jpg', upload_to='profile_pics')
+        default='default.jpg', upload_to='profile_pics')
 
     def fullname(self):
         return f'{self.user.first_name} {self.user.last_name}'
