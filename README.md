@@ -7,11 +7,7 @@
     <br />
     <br 
     
-    //<a href="https://instagramcloneri.herokuapp.com/">View Now</a>
-    ·
-    <a href="https://github.com/rohid-hub/Instagram_Clone/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/rohid-hub/Instagram_Clone/issues">Request Feature</a>
+    [View Now](https://instagramcloneri.herokuapp.com/)·[Report Bug](https://github.com/rohid-hub/Instagram_Clone/issues)·[Request Feature](https://github.com/rohid-hub/Instagram_Clone/issues)
   </p>
 </p>
 
