@@ -5,10 +5,9 @@
   <p align="center">
     Instagram clone project with django
     <br />
-    <br 
-    <a href="https://instagramcloneri.herokuapp.com">View Now</a>
+    <br>
   </p>
-  [View Now](https://instagramcloneri.herokuapp.com/)·[Report Bug](https://github.com/rohid-hub/Instagram_Clone/issues)·[Request Feature](https://github.com/rohid-hub/Instagram_Clone/issues)
+  [View Now](https://instagramcloneri.herokuapp.com/)·  [Report Bug](https://github.com/rohid-hub/Instagram_Clone/issues) ·[ Request Feature](https://github.com/rohid-hub/Instagram_Clone/issues)
 </p>    
     
 
