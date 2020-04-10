@@ -6,6 +6,8 @@
     Instagram clone project with django
     <br />
     <br />
+    <a href="https://instagramcloneri.herokuapp.com/">Visit Site</a>
+    ·
     <a href="https://github.com/rohid-hub/Instagram_Clone/issues">Report Bug</a>
     ·
     <a href="https://github.com/rohid-hub/Instagram_Clone/issues">Request Feature</a>
