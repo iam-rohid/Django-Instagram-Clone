@@ -7,7 +7,7 @@
     <br />
     <br 
     
-    [View Now](https://instagramcloneri.herokuapp.com/)·[Report Bug](https://github.com/rohid-hub/Instagram_Clone/issues)·[Request Feature](https://github.com/rohid-hub/Instagram_Clone/issues)
+    [Report Bug](https://github.com/rohid-hub/Instagram_Clone/issues)·[Request Feature](https://github.com/rohid-hub/Instagram_Clone/issues)
   </p>
 </p>
 
